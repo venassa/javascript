@@ -1,0 +1,590 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>豆果美食</title>
+  <style>
+  body{
+    background: #f4f0ec;
+    margin: 0;
+    font: 12px Tahoma,sans-serif;
+  }
+  .clear:after{
+    clear:both;
+    content:"";
+    height: 0;
+    visibility: hidden;
+    display: block;
+  }
+  #header {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .head {
+    width: 940px;
+    margin: 0 auto;
+    height: 50px;
+  }
+   .head h1 {
+    float: left;
+    width: 118px;
+    height: 40px;
+    background: url('img/24.jpg');
+    margin-top: 7px;
+  }
+  .reg {
+    line-height: 30px;
+    float: right;
+    margin-top: 5px;
+    margin-right: 20px;
+    font-size: 15px;
+  }
+  a{
+    color: #12937c;
+    text-decoration: none;
+  }
+  .interval{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .nav {
+    width: 100%;
+    height: 60px;
+    background-color: #EBF1E2;
+  }
+  .navlist{
+    width: 940px;
+    margin: 0 auto;
+    height: 60px;
+  }
+  .navlist ul {
+    float: left;
+    height: 50px;
+    width: 1000px;
+    margin-left: -30px;
+    
+  }
+  .tab {
+    float: left;
+    width: 110px;
+    line-height: 30px;
+    text-align: center;
+    padding: 0 20px 0 20px;
+    font-size: 20px;
+    display: block;
+    border-right: 3px dotted #6fbfb1;
+
+  }
+  
+  .navlist li a span {
+    color: #12937c;
+    display: block;
+    width: auto;
+    padding: 0 14px 0 14px;
+    font-weight: bold;
+  }
+  #main {
+    width: 940px;
+    margin: 0 auto;
+  }
+  #focus{
+    width: 700px;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    left: 120px;
+  }
+  #list{
+    width: 3600px;
+    height: 220px;
+    position: absolute;
+    z-index:1;
+  }
+  #list.img{
+    float: left;
+  }
+  #point{
+    position: absolute;
+    height: 15px;
+    width: 150px;
+    bottom: 5px; 
+    left: 300px;
+    font-size: 13px;
+  }
+  #point span{
+    cursor: pointer;
+    float:left;
+    border:1px solid #fff;
+    width: 13px;
+    height:13px;
+    border-radius: 50%;
+    background: rgb(152, 202, 152);
+  }
+  #prev{
+    cursor: pointer;
+    line-height: 180px;
+    text-align: center;
+    font-size: 75px;
+    font-weight: bold;
+    width: 125px;
+    position: absolute;
+    top: 140px;
+    background-color: RGBA(0,0,0,.3);
+    color:#fff;
+    height: 220px;
+  }
+  #next{
+    cursor: pointer;
+    line-height: 180px;
+    text-align: center;
+    font-size: 75px;
+    font-weight: bold;
+    width: 125px;
+    position: absolute;
+    top: 140px;
+    right: 200px;
+    background-color: RGBA(0,0,0,.3);
+    color:#fff;
+    height: 220px;
+
+  }
+  
+  .hot {
+    margin-bottom: 5px;
+  }
+   h2 {
+    font-size: 16px;
+    color: #333;
+    margin: 0px;
+    line-height: 150%;
+    
+  }
+  .Container {
+    width: 220px;
+    height: 265px;
+    position: relative;
+  }
+  .mr {
+    margin-right: 20px;
+  }
+  .left {
+    float: left;
+  }
+  .recipes img {
+    width: 220px;
+    height: 220px;
+    display: block;
+    float: left;
+  }
+  .bgtm {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 220px;
+    height: 30px;
+    margin-bottom: 0
+  }
+  .rename {
+    padding: 6px 10px 3px 0;
+    line-height: 150%;
+    font-size: 14px;
+  }
+  .mainleft {
+    width: 600px;
+    float: left;
+    margin-top: 25px;
+  }
+  .ingre {
+    margin-bottom: 26px;
+  }
+  .add {
+    font-size: 12px;
+    line-height: 150%;
+  }
+  .ingre ul {
+    background: #EBF1E2;
+    padding: 20px 0 0 30px;
+  }
+  .ingre ul li {
+    float: left;
+    width: 60px;
+    height: 90px;
+    text-align: center;
+    line-height: 18px;
+    overflow: hidden;
+    margin: 0 20px 11px 0;
+  }
+  .ingre ul li img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+    display: block;
+  }
+  .article {
+    width: 600px;
+    margin-bottom: 18px;
+  }
+  .article a {
+    font-weight: normal;
+    font-size: 7px;
+  }
+  .onehot {
+    width: 600px;
+    margin-bottom: 10px;
+  }
+  .onehot .img {
+    display: block;
+    height: 110px;
+    width: 140px;
+    float: left;
+    margin-right: 20px;
+  }
+  .onehot h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    float: left;
+  }
+  .onehot p {
+    width: 440px;
+    height: 78px;
+    overflow: hidden;
+    text-indent: 2em;
+    line-height: 20px;
+    float: left;
+    color: #999;
+  }
+  .article ul{
+      height: 90px;
+      padding-left: 0;
+  }
+
+  .article li {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    padding-left: 10px;
+    width: 290px;
+    font-size: 7px;
+  }
+  .mainright {
+    width: 300px;
+    float: right;
+    margin-top: 25px;
+  }
+  .menue {
+    width: 300px;
+    margin-bottom: 26px
+  }
+  .menue ul {
+    background: #EBF1E2;
+    padding: 7px 16px 6px 16px;
+  }
+  .menue ul li {
+    height: 41px;
+    line-height: 41px;
+    overflow: hidden;
+    padding-left: 10px;
+    width: 258px;
+    border-bottom: 1px dotted #d5d5c4;
+  }
+  .exper li {
+    line-height: 30px;
+  }
+  .cop{
+    float: left;
+    width: 130px;
+    font-weight: bolder;
+  }
+  #footer {
+    width: 100%;
+    margin-top:40px;
+  }
+  .connect {
+    width: 940px;
+    float: left;
+    text-align: center;
+    margin: 15px 200px;
+  }
+  .connect a {
+    color: #6b553f;
+  }
+  .address {
+    width: 100%;
+    color: #999;
+    text-align: center;
+    float: left;
+  }
+  .address a {
+    color: #999;
+  }
+</style>
+</head>
+<body class="clear">
+  <div id="header">
+    <div class="head">
+        <h1></h1>  
+        <div class="reg"><a href="http://www.douguo.com/signin.html?go=" title="登录"  target="_blank">登录</a>
+          <span class="interval">|</span><a href="http://www.douguo.com/signup.html" target="_blank" title="注册">注册</a>
+        </div>
+    </div>   
+    <div class="nav">
+      <div class="navlist">
+        <ul>
+          <li class="tab"><a href="http://www.douguo.com/" ><span>首页</span></a></li>
+          <li class="tab"><a href="http://www.douguo.com/caipu"><span>菜谱</span></a></li>
+          <li class="tab"><a href="http://www.douguo.com/diet"><span>写食派</span></a></li>
+          <li class="tab"><a href="http://www.douguo.com/brand"><span>品牌馆</span></a></li>
+          <li class="tab"><a href="http://www.douguo.com/article"><span>主题站</span></a></li>
+          <li class="tab"><a href="http://www.douguo.com/huodong"><span>活动</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="main" class="clear">
+    <div id="focus">
+      <div id="list" style="left:0px;">
+        <img src="img/25.jpg">
+        <img src="img/26.jpg">
+        <img src="img/27.jpg">
+        <img src="img/28.jpg">
+        <img src="img/29.jpg">
+      </div>
+      <div id="point">
+        <span index="1"></span>
+        <span index="2"></span>
+        <span index="3"></span>
+        <span index="4"></span>
+        <span index="5"></span>
+      </div>
+    </div>
+    <a href="javascript:" id="prev">&lt;</a>
+    <a href="javascript:" id="next">&gt;</a>
+    <script type="text/javascript">
+      var list=document.getElementById('list');
+      var point=document.getElementById('point').getElementsByTagName('span');
+      var focus=document.getElementById('focus');
+      var prev=document.getElementById('prev');
+      var next=document.getElementById('next');
+      var index=1;
+      var time;
+
+      function move(mm){
+        list.style.left=parseInt(list.style.left)+mm+"px";
+        if(parseInt(list.style.left)>0){
+          list.style.left=-2800+'px';
+        }
+        if(parseInt(list.style.left)<-2800){
+          list.style.left= 0+'px';
+        }
+      }
+      next.onclick=function(){
+        move(-700);
+      }
+      prev.onclick=function(){
+        move(700);
+      }
+      for(var i=0;i<point.length;i++)
+        point[i].onclick=function(){
+          var newindex=parseInt(this.getAttribute('index'));
+          var mm=-700*(newindex-index);
+          move(mm);
+          index=newindex;          
+        }
+      function start(){
+        time=setInterval(function(){next.onclick();},2000);
+      }
+      function pause(){
+        clearInterval(time);
+      }
+      focus.onmouseover=pause;
+      focus.onmouseout=start;
+      start();
+    </script>
+    <div class="hot clear">
+      <h2><a href="http://www.douguo.com/caipu">每日编辑推荐</a></h2>
+      <div class="recipes">
+        <div class="mr Container left">
+          <div>
+           <p ><a target="_blank" href="http://www.douguo.com/cookbook/969585.html"><img src="img/01.jpg" ></a></p>
+           <p class="bgtm">
+            <span class="rename "><a target="_blank" href="http://www.douguo.com/cookbook/969585.html">啤酒猪蹄-</a></span>
+           </p>
+          </div>
+        </div>
+        <div class="mr Container mb left">
+          <div class="cover">
+            <p><a target="_blank" href="http://www.douguo.com/cookbook/1079233.html"><img src="img/02.jpg"></a></p>
+            <p class="bgtm">
+            <span class="rename"><a target="_blank" href="http://www.douguo.com/cookbook/1079233.html">#核美味相会#宫保虾仁</a></span>
+            </p>
+          </div>
+        </div>
+        <div class="mr Container mb left">
+          <div class="cover">
+            <p><a target="_blank" href="http://www.douguo.com/cookbook/1078412.html">
+              <img src="img/04.jpg"></a></p>
+            <p class="bgtm">
+              <span class="rename"><a target="_blank" href="http://www.douguo.com/cookbook/1078412.html">#菰米鲜肉云吞#</a>
+              </span>
+            </p>
+          </div>
+        </div>
+        <div class=" Container mb left">
+          <div class="cover">
+            <p><a target="_blank" href="http://www.douguo.com/cookbook/1077604.html">
+              <img src="img/05.jpg"></a></p>
+            <p class="bgtm">
+              <span class="rename"><a target="_blank" href="http://www.douguo.com/cookbook/1077604.html">紫薯玫瑰花</a></span>
+            </p>
+          </div>
+        </div>
+        <div class="mr Container mb left">
+          <div class="cover">
+            <p><a target="_blank" href="http://www.douguo.com/cookbook/1078135.html">
+              <img src="img/06.jpg"></a></p>
+            <p class="bgtm">
+              <span class="rename"><a target="_blank" href="http://www.douguo.com/cookbook/1078135.html">鱼香白菜</a></span>
+            </p>
+          </div>
+        </div>
+        <div class="mr Container mb left">
+          <div class="cover">
+            <p><a target="_blank" href="http://www.douguo.com/cookbook/1078709.html">
+              <img src="img/07.jpg"></a></p>
+            <p class="bgtm">
+              <span class="rename"><a target="_blank" href="http://www.douguo.com/cookbook/1078709.html">#九阳烘焙</a></span>
+            </p>
+          </div>
+        </div>
+        <div class="mr Container mb left">
+          <div class="cover">
+            <p><a target="_blank" href="http://www.douguo.com/cookbook/1079179.html">
+              <img src="img/08.jpg"></a></p>
+            <p class="bgtm">
+              <span class="rename"><a target="_blank" href="http://www.douguo.com/cookbook/1079179.html">#食尚争霸　五花肉金针卷#</a></span>
+            </p>
+          </div>
+        </div>
+        <div class="Container mb left">
+          <div class="cover">
+            <p><a target="_blank" href="http://www.douguo.com/cookbook/1079708.html">
+              <img src="img/09.jpg"></a></p>
+            <p class="bgtm">
+              <span class="rename"><a target="_blank" href="http://www.douguo.com/cookbook/1079708.html">香菜平菇丸子汤---冬季暖身</a></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mainleft">
+      <div class="ingre">
+        <h2>时令食材 <span class="add"><a href="http://www.douguo.com/shicai">(根据食材找菜谱)</a></span>
+        </h2>
+        <ul class="clear">
+          <li><a target="_blank" href="http://www.douguo.com/ingredients/山楂" title="山楂的做法大全">
+            <img src="img/10.jpg">山楂</a>
+          </li>
+          <li><a target="_blank" href="http://www.douguo.com/ingredients/蛤蜊" title="蛤蜊的做法大全">
+            <img src="img/11.jpg">蛤蜊</a>
+          </li>
+          <li><a target="_blank" href="http://www.douguo.com/ingredients/大闸蟹" title="大闸蟹的做法大全">
+            <img src="img/12.jpg">大闸蟹</a>
+          </li>
+          <li><a target="_blank" href="http://www.douguo.com/ingredients/银鱼" title="银鱼的做法大全">
+            <img src="img/13.jpg">银鱼</a>
+          </li>
+          <li><a target="_blank" href="http://www.douguo.com/ingredients/羊肉" title="羊肉的做法大全">
+            <img src="img/14.jpg">羊肉</a>
+          </li>
+          <li><a target="_blank" href="http://www.douguo.com/ingredients/牛肉" title="牛肉的做法大全">
+            <img src="img/15.jpg">牛肉</a>
+          </li>
+          <li><a target="_blank" href="http://www.douguo.com/ingredients/松子" title="松子的做法大全">
+            <img src="img/16.jpg">松子</a>
+          <li><a target="_blank" href="http://www.douguo.com/ingredients/桔子" title="桔子的做法大全">
+            <img src="img/17.jpg" >桔子</a>
+          </li>
+          <li><a target="_blank" href="http://www.douguo.com/ingredients/芋头" title="芋头的做法大全">
+            <img src="img/18.jpg" >芋头</a>
+          </li>
+          <li><a target="_blank" href="http://www.douguo.com/ingredients/冬笋" title="冬笋的做法大全">
+            <img src="img/19.jpg" >冬笋</a>
+          </li>
+          <li><a target="_blank" href="http://www.douguo.com/ingredients/菠菜" title="菠菜的做法大全">
+            <img src="img/20.jpg" >菠菜</a>
+          </li>
+          <li><a target="_blank" href="http://www.douguo.com/ingredients/大白菜" title="大白菜的做法大全"><img src="img/21.jpg">大白菜</a>
+          </li>
+          <li>
+            <a target="_blank" href="http://www.douguo.com/ingredients/白萝卜" title="白萝卜的做法大全"><img src="img/22.jpg" >白萝卜</a>
+          </li>
+          <li><a target="_blank" href="http://www.douguo.com/ingredients/红薯" title="红薯的做法大全">
+            <img src="img/23.jpg">红薯</a>
+          </li>
+        </ul>
+      </div>
+      <div class="article" >
+        <h2>精彩主题文章 <a target="_blank" href="http://www.douguo.com/article">(更多)</a></h2>
+        <div style="background: #EBF1E2">
+        <div class="onehot clear">
+          <a href="http://www.douguo.com/article/detail/729" target="_blank" style="background: url(http://zt1.douguo.net/upload/post/0/8/f/0893ec813cb03633c8cf6520cf2a0cdf.jpg) no-repeat 0 -20px;background-size:140px;"class="img"></a>
+          <h3><a style="font-size:14px"title="大菜的美食物语：做饭是一种生活，也是一门艺术" target="_blank" href="http://www.douguo.com/article/detail/729">大菜的美食物语：做饭是一种生活，也是一门艺术</a></h3>
+          <p>大菜的美食物语：曾经是平凡的家庭主妇，曾经只是爱好美食的普通人，可是因为这份爱好，因为自己的努力，因为不断地分享，如今的她早已褪去了青涩，褪去了平凡。现在的她，是豆果的明星美食家，是多本畅销食谱书的作者。她的美食受到了大家的喜爱，她也将自己最喜爱最擅长的家乡味道——绝味川菜分享给大家。当然她依旧还是那个美丽的妈妈。 今天，豆小果带着大家一起分享她的成功。</p>
+        </div>
+        <ul class="clear">
+          <li><a title="H&S厨艺养成记——只为一句：有你真好。" target="_blank" href="http://www.douguo.com/article/detail/728">H&S厨艺养成记——只为一句：有你真好。</a></li>
+          <li><a title="感冒，可不可以不吃药？" target="_blank" href="http://www.douguo.com/article/detail/727">感冒，可不可以不吃药？</a></li>
+          <li><a title="冬日进补，该吃些什么？" target="_blank" href="http://www.douguo.com/article/detail/726">冬日进补，该吃些什么？</a></li>
+          <li><a title="请叫我美食家，不是吃货——就是这么任性" target="_blank" href="http://www.douguo.comhttp://www.douguo.com/article/detail/725">请叫我美食家，不是吃货——就是这么任性</a></li>
+          <li><a title="芝士就是力量" target="_blank" href="http://www.douguo.com/article/detail/724">芝士就是力量</a></li>
+          <li><a title="饺子也要吃应季的" target="_blank" href="http://www.douguo.com/article/detail/723">饺子也要吃应季的</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </div>
+    <div class="mainright">
+      <div class="menue">
+      <h2>精彩菜单 <span class="add"><a href="http://www.douguo.com/caipu/caidan">(更多)</a></span></h2>
+      <ul class="clear">
+        <li><a title="你的饺子也可以这样吃" target="_blank" href="http://www.douguo.com/caipu/caidan/827957.html">你的饺子也可以这样吃</a></li>
+        <li><a title="肉食控，无肉不欢" target="_blank" href="http://www.douguo.com/caipu/caidan/827963.html">肉食控，无肉不欢</a></li>
+        <li><a title="烤箱教程全攻略" target="_blank" href="http://www.douguo.com/caipu/caidan/827968.html">烤箱教程全攻略</a></li>
+        <li><a title="为你收集45种口味面条" target="_blank" href="http://www.douguo.com/caipu/caidan/827942.html">为你收集45种口味面条</a></li>
+        <li><a title="《今天吃什么》集锦" target="_blank" href="http://www.douguo.com/caipu/caidan/826316.html">《今天吃什么》集锦</a></li>
+       </ul>
+     </div>
+     <div class="exper">
+        <h2>豆果实验室</h2>
+        <ul>
+          <li><a href="http://www.douguo.com/huodong/tizhi" target="_blank" rel="nofollow">体质测试</a></li>
+          <li><a href="http://www.douguo.com/caipu/randRecipe" target="_blank" rel="nofollow">智能找菜</a></li>
+          <li><a href="http://www.douguo.com/ceshi/test" target="_blank" rel="nofollow">豆果测试题</a></li>
+          <li><a href="http://www.douguo.com/special/2012/meishitiyanguan" target="_blank" rel="nofollow">豆果美食线下体验馆</a></li>
+        </ul>
+        <h3>更多合作，更多精彩</h3>
+        <ul>
+          <li class="cop"><a href="http://www.douguo.com/special/2012/masterchef/index.html" target="_blank"></a><a href="http://www.douguo.com/special/2013/masterchef/index.html" target="_blank">东方卫视</a></li>
+          <li class="cop"><a href="http://www.douguo.com/meiwei" target="_blank"></a><a href="http://www.douguo.com/meiwei" target="_blank">美味人生</a></li>
+          <li class="cop"><a href="http://www.douguo.com/xzy/"target="_blank"></a><a href="http://www.douguo.com/xzy/" target="_blank">康宁心煮意</a></li>
+          <li class="cop"><a href="http://e.weibo.com/leekumkeekitchen"target="_blank" rel="nofollow"></a><a href="http://e.weibo.com/leekumkeekitchen" target="_blank" rel="nofollow">李锦记</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="footer" class="clear" >
+    <div class="connect">
+      <a href="http://www.douguo.com/about.html" rel="nofollow" target="_blank">关于豆果</a> ·
+       <a href="http://www.douguo.com/hr.html" rel="nofollow" target="_blank">在豆果工作</a> ·
+      <a href="http://www.douguo.com/user/feedback" rel="nofollow" target="_blank">意见反馈</a> ·
+      <a href="http://www.douguo.com/links.html" target="_blank">友情链接</a> · 
+      <a href="http://www.douguo.com/allrecipes/" target="_blank">菜谱大全</a> 
+    </div>
+    <div class="address">
+      ©2009-2014 <a href="http://www.douguo.com" target="_blank">北京豆果信息技术有限公司</a> <a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow">京ICP证111032号</a> 京公网安备11010102001133号 京网文[2014]0774-174号
+    </div>
+  </div>
+</body>
+</html>
